@@ -241,14 +241,36 @@ main #intro {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  main #intro {
+    display: flex;
+    flex-direction: column;
+  }
+}
 main #intro .avatar {
   width: 20%;
+  display: flex;
+  flex-direction: column;
 }
 main #intro .avatar img {
   filter: grayscale(1);
 }
+@media (max-width: 500px) {
+  main #intro .avatar img {
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 35px;
+  }
+}
 main #intro .intro-text {
   width: 70%;
+}
+@media (max-width: 500px) {
+  main #intro .avatar,
+  main #intro .intro-text {
+    width: 100%;
+  }
 }
 main #about {
   display: flex;
@@ -256,8 +278,20 @@ main #about {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  main #about {
+    display: flex;
+    flex-direction: column;
+  }
+}
 main #about div {
   width: 45%;
+}
+@media (max-width: 500px) {
+  main #about div {
+    width: 100%;
+    margin-bottom: 35px;
+  }
 }
 main #history table {
   width: 100%;
