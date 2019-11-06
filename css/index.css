@@ -212,6 +212,7 @@ table th {
 }
 main {
   width: 41%;
+  max-width: 610px;
   margin: 0 auto;
 }
 @media (max-width: 500px) {
