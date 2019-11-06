@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|VT323&display=swap');
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -50,10 +52,114 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+// variables
+@main-font: 'Inconsolata', monospace;
+@headings-font: 'VT323', monospace;
+@main-font-size: 1.6rem;
+@nav-font-size: 2.0rem;
+@section-margin: 35px;
+
+.flex-row() {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 html, body {
     height: 100%;
 }
+
+// fonts
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: @main-font;
+}
+
+p, span, a, li, blockquote {
+	font-size: @main-font-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @headings-font;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 4rem;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+h4 {
+	font-size: 2rem;
+}
+
+h5, h6 {
+	font-size: 1.5rem;
+}
+
+// begin main
+main {
+
+	// layout
+	width: 40%;
+	margin: 0 auto;
+
+	header, section {
+		margin: @section-margin 0;
+	}
+
+	header {
+		margin: @section-margin * 1.2 0;
+
+		nav {
+			.flex-row();
+			justify-content: space-between;
+		}
+
+		nav a {
+			font-size: @nav-font-size;
+		}
+	}
+
+	#intro {
+		.flex-row();
+		justify-content: space-between;
+
+		.avatar {
+			width: 20%;
+		}
+
+		.intro-text {
+			width: 70%;
+		}
+	}
+
+	#about {
+		.flex-row();
+		justify-content: space-between;
+
+		div {
+			width: 45%;
+		}
+	}
+
+	.button {
+		text-decoration: none;
+	}
+}
+
+
 
