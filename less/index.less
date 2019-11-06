@@ -56,42 +56,66 @@ table {
 	max-width: 100%;
 }
 
-// variables
+html, body {
+    height: 100%;
+}
+
+// *** variables *** 
 @main-font: 'Inconsolata', monospace;
 @headings-font: 'VT323', monospace;
+@main-font-color: rgb(211, 211, 211);
 @main-font-size: 1.6rem;
 @nav-font-size: 2.0rem;
 @section-margin: 35px;
+@dotted-border: 0.2em dotted @main-font-color;
 
+// *** mixins ***
 .flex-row() {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
-html, body {
-    height: 100%;
+.bottom-bordered() {
+	border-bottom: @dotted-border;
+	margin-bottom: 1rem;
 }
 
-// fonts
+.bordered() {
+	border: @dotted-border;
+}
+
+// *** text ***
 html {
 	font-size: 62.5%;
 }
 
 body {
 	font-family: @main-font;
+	color: @main-font-color;
+	font-size: @main-font-size;
+	
+	background-color: rgb(26, 26, 26);
 }
 
 p, span, a, li, blockquote {
-	font-size: @main-font-size;
+	line-height: 1.4;
 }
 
+a {
+	color: @main-font-color;
+	text-decoration: none;
+	.bottom-bordered();
+}
+
+// headings
 h1, h2, h3, h4, h5, h6 {
 	font-family: @headings-font;
 }
 
 h1 {
 	font-size: 5rem;
+	margin-bottom: 2rem;
 }
 
 h2 {
@@ -110,12 +134,36 @@ h5, h6 {
 	font-size: 1.5rem;
 }
 
-// begin main
+// lists
+ul li {
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+// tables
+table {
+	.bordered();
+	border-collapse:separate; 
+	border-spacing: 1rem;
+	
+
+	th {
+		text-align: left;
+		font-weight: bolder;
+		font-size: 1.7rem;
+	}
+}
+
+// *** begin main *** 
 main {
 
 	// layout
-	width: 40%;
+	width: 41%;
 	margin: 0 auto;
+
+	@media(max-width: 500px) {
+		width: 90%;
+	}
 
 	header, section {
 		margin: @section-margin 0;
@@ -140,6 +188,10 @@ main {
 
 		.avatar {
 			width: 20%;
+
+			img {
+				filter: grayscale(1);
+			}
 		}
 
 		.intro-text {
@@ -156,8 +208,19 @@ main {
 		}
 	}
 
+	#history {
+		table {
+			width: 100%;
+		}
+	}
+
 	.button {
 		text-decoration: none;
+	}
+
+	footer {
+		margin-top: 80px;
+		text-align: center;
 	}
 }
 

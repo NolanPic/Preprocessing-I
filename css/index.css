@@ -154,13 +154,22 @@ html {
 }
 body {
   font-family: 'Inconsolata', monospace;
+  color: #d3d3d3;
+  font-size: 1.6rem;
+  background-color: #1a1a1a;
 }
 p,
 span,
 a,
 li,
 blockquote {
-  font-size: 1.6rem;
+  line-height: 1.4;
+}
+a {
+  color: #d3d3d3;
+  text-decoration: none;
+  border-bottom: 0.2em dotted #d3d3d3;
+  margin-bottom: 1rem;
 }
 h1,
 h2,
@@ -172,6 +181,7 @@ h6 {
 }
 h1 {
   font-size: 5rem;
+  margin-bottom: 2rem;
 }
 h2 {
   font-size: 4rem;
@@ -186,9 +196,28 @@ h5,
 h6 {
   font-size: 1.5rem;
 }
+ul li {
+  list-style-type: square;
+  list-style-position: inside;
+}
+table {
+  border: 0.2em dotted #d3d3d3;
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+table th {
+  text-align: left;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
 main {
-  width: 40%;
+  width: 41%;
   margin: 0 auto;
+}
+@media (max-width: 500px) {
+  main {
+    width: 90%;
+  }
 }
 main header,
 main section {
@@ -215,6 +244,9 @@ main #intro {
 main #intro .avatar {
   width: 20%;
 }
+main #intro .avatar img {
+  filter: grayscale(1);
+}
 main #intro .intro-text {
   width: 70%;
 }
@@ -227,6 +259,13 @@ main #about {
 main #about div {
   width: 45%;
 }
+main #history table {
+  width: 100%;
+}
 main .button {
   text-decoration: none;
+}
+main footer {
+  margin-top: 80px;
+  text-align: center;
 }
